@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 
 public class GetScore : MonoBehaviour
@@ -7,8 +8,12 @@ public class GetScore : MonoBehaviour
 
     private float DisplayScore;
     
+    [SerializeField] TMP_Text scoreText;
+    
     private void Start()
     {
         DisplayScore = ScoreManager.CurrentScore;
+
+        scoreText.text = DisplayScore.ToString(); 
     }
 }
