@@ -45,6 +45,11 @@ public class GetScore : MonoBehaviour
             {
                 SoundManager.Instance.PlayBadPick();
             }
+            
+            DisplayScore--;
+            ScoreManager.CurrentScore = DisplayScore;
+            scoreText.text = DisplayScore.ToString(); 
+            
             //TODO: will implement a system with lives or gameover condition later. 
         }
     }
