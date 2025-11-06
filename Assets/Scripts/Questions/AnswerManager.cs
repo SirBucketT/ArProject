@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class AnswerManager : MonoBehaviour
@@ -6,7 +7,18 @@ public class AnswerManager : MonoBehaviour
     [SerializeField] bool isBCorrect;
     [SerializeField] bool isCCorrect;
     [SerializeField] bool isDCorrect;
+    [SerializeField] GameObject questionManager;
+    
+    [Header("Time until object destruction")]
+    [SerializeField] float waitingTime;
 
+    IEnumerator DestroyQuestion()
+    {
+        yield return new WaitForSeconds(waitingTime);
+        
+        Destroy(questionManager);
+        Destroy(this.gameObject);
+    }
     public void OnClickA()
     {
         if (isACorrect)
@@ -23,6 +35,8 @@ public class AnswerManager : MonoBehaviour
                 IsIncorrectReply = true,
             }.InvokeExtension();
         }
+
+        StartCoroutine(DestroyQuestion());
     }
     public void OnClickB()
     {
@@ -40,6 +54,7 @@ public class AnswerManager : MonoBehaviour
                 IsIncorrectReply = true,
             }.InvokeExtension();
         }
+        StartCoroutine(DestroyQuestion());
     }
     public void OnClickC()
     {
@@ -57,6 +72,7 @@ public class AnswerManager : MonoBehaviour
                 IsIncorrectReply = true,
             }.InvokeExtension();
         }
+        StartCoroutine(DestroyQuestion());
     }
     public void OnClickD()
     {
@@ -74,5 +90,6 @@ public class AnswerManager : MonoBehaviour
                 IsIncorrectReply = true,
             }.InvokeExtension();
         }
+        StartCoroutine(DestroyQuestion());
     }
 }
