@@ -608,9 +608,9 @@ RectTransform:
   m_Father: {fileID: 568815205}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 176.5, y: -219.5}
-  m_SizeDelta: {x: 250.9472, y: 109.8195}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 28.600145, y: -245.43}
+  m_SizeDelta: {x: -57.199707, y: 109.82}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &852174156
 MonoBehaviour:
@@ -666,7 +666,7 @@ MonoBehaviour:
   m_fontSizeMin: 70
   m_fontSizeMax: 213
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0

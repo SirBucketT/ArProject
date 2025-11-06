@@ -14,7 +14,7 @@ public class GetScore : MonoBehaviour
     {
         DisplayScore = ScoreManager.CurrentScore;
 
-        scoreText.text = DisplayScore.ToString(); 
+        scoreText.text = $"Current Score: {DisplayScore.ToString()}";
     }
 
     void OnEnable()
@@ -35,22 +35,20 @@ public class GetScore : MonoBehaviour
             {
                 SoundManager.Instance.PlayScoreGain();
             }
-            
             DisplayScore++;
-            ScoreManager.CurrentScore = DisplayScore;
-            scoreText.text = DisplayScore.ToString(); 
+            
         } else if (msg.IsIncorrectReply)
         {
             if (SoundManager.Instance != null)
             {
                 SoundManager.Instance.PlayBadPick();
             }
-            
             DisplayScore--;
-            ScoreManager.CurrentScore = DisplayScore;
-            scoreText.text = DisplayScore.ToString(); 
             
-            //TODO: will implement a system with lives or gameover condition later. 
+            //TODO: will implement a system with lives or gameover condition later.
+            
         }
+        
+        scoreText.text = $"Current Score: {DisplayScore.ToString()}";
     }
 }
