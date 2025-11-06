@@ -50,5 +50,7 @@ public class GetScore : MonoBehaviour
         }
         
         scoreText.text = $"Current Score: {DisplayScore.ToString()}";
+        
+        DisplayScore = ScoreManager.CurrentScore;
     }
 }
