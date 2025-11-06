@@ -7,7 +7,6 @@ public class AnswerManager : MonoBehaviour
     [SerializeField] bool isBCorrect;
     [SerializeField] bool isCCorrect;
     [SerializeField] bool isDCorrect;
-    [SerializeField] GameObject questionManager;
     
     [Header("Time until object destruction")]
     [SerializeField] float waitingTime;
@@ -16,7 +15,6 @@ public class AnswerManager : MonoBehaviour
     {
         yield return new WaitForSeconds(waitingTime);
         
-        Destroy(questionManager);
         Destroy(this.gameObject);
     }
     public void OnClickA()
