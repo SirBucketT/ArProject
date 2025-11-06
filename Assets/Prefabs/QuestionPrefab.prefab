@@ -84,6 +84,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4156453486729313236}
+  - component: {fileID: 8048647407495782702}
   m_Layer: 0
   m_Name: QuestionPrefab
   m_TagString: Untagged
@@ -107,6 +108,28 @@ Transform:
   - {fileID: 4665097534892085935}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8048647407495782702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564666390134525999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ba6a679268565cac9d3bfff21ce560a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  question: A question in the game will spawn here. You can ignore all this dumb
+    text or something
+  answerA: one reply
+  answerB: another replay
+  answerC: oops another reply
+  answerD: and the last reply
+  answerTextA: {fileID: 2812711101947556635}
+  answerTextB: {fileID: 8515552128987023811}
+  answerTextC: {fileID: 1907898660524693286}
+  answerTextD: {fileID: 2362993442108735486}
 --- !u!1 &1570114556975504366
 GameObject:
   m_ObjectHideFlags: 0
@@ -1186,8 +1209,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: A question in the game will spawn here. You can ignore all this dumb text
-    or something
+  m_text: question
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3abe88dfde1a49ab6b64a744e983a85a, type: 2}
   m_sharedMaterial: {fileID: 5214807108758238957, guid: 3abe88dfde1a49ab6b64a744e983a85a, type: 2}
