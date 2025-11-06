@@ -16,4 +16,36 @@ public class GetScore : MonoBehaviour
 
         scoreText.text = DisplayScore.ToString(); 
     }
+
+    void OnEnable()
+    {
+        Broker.Subscribe<ReplyMessage>(UpdateScore);
+    }
+
+    void OnDisable()
+    {
+        Broker.Unsubscribe<ReplyMessage>(UpdateScore);
+    }
+
+    void UpdateScore(ReplyMessage msg)
+    {
+        if (msg.IsCorrectReply)
+        {
+            if (SoundManager.Instance != null)
+            {
+                SoundManager.Instance.PlayScoreGain();
+            }
+            
+            DisplayScore++;
+            ScoreManager.CurrentScore = DisplayScore;
+            scoreText.text = DisplayScore.ToString(); 
+        } else if (msg.IsIncorrectReply)
+        {
+            if (SoundManager.Instance != null)
+            {
+                SoundManager.Instance.PlayBadPick();
+            }
+            //TODO: will implement a system with lives or gameover condition later. 
+        }
+    }
 }
