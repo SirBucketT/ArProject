@@ -1184,9 +1184,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2064089688}
-  - component: {fileID: 2064089691}
   - component: {fileID: 2064089690}
   - component: {fileID: 2064089689}
+  - component: {fileID: 2064089691}
   m_Layer: 0
   m_Name: QuizManager
   m_TagString: Untagged
@@ -1225,7 +1225,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_SerializedLibrary: {fileID: 11400000, guid: e9bfce5ea60e3894483fae40eb674a2f, type: 2}
-  m_MaxNumberOfMovingImages: 1
+  m_MaxNumberOfMovingImages: 0
   m_TrackedImagePrefab: {fileID: 564666390134525999, guid: 3e175e6ce5385526d8da3655243815ef, type: 3}
 --- !u!114 &2064089690
 MonoBehaviour:
@@ -1253,15 +1253,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2064089687}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588ff5762ed571a3d95ded495d18d517, type: 3}
+  m_Script: {fileID: 11500000, guid: f68ee23d7c43078498687641d48f3fa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TrackedImageManager: {fileID: 2064089689}
-  contentMappings:
-  - qrCodeName: TemplateQuestion
-    contentPrefab: {fileID: 564666390134525999, guid: 3e175e6ce5385526d8da3655243815ef, type: 3}
-  - qrCodeName: TestIndex2
-    contentPrefab: {fileID: 100008, guid: b44f3940c4940544a8c2c6aee5fa086f, type: 3}
+  arPrefabs:
+  - {fileID: 564666390134525999, guid: 3e175e6ce5385526d8da3655243815ef, type: 3}
+  - {fileID: 100008, guid: b44f3940c4940544a8c2c6aee5fa086f, type: 3}
+  infoBox: {fileID: 0}
 --- !u!1 &2133289359
 GameObject:
   m_ObjectHideFlags: 0
