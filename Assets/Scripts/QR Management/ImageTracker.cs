@@ -4,29 +4,32 @@ using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 using TMPro;
 
-public class ImageTracker : MonoBehaviour
+public class PersistentImageTracker : MonoBehaviour
 {
     [SerializeField] private ARTrackedImageManager trackedImages;
 
     [System.Serializable]
     public struct ImagePrefabPair
     {
-        public string imageName; // Must match Reference Image Library name
-        public GameObject prefab; 
+        public string imageName; 
+        public GameObject prefab;
     }
 
     [SerializeField] private ImagePrefabPair[] imagePrefabPairs;
     [SerializeField] private TMP_Text infoBox;
 
     private readonly Dictionary<string, GameObject> prefabMap = new();
-    private readonly Dictionary<ARTrackedImage, GameObject> spawnedPrefabs = new();
+
+    private readonly Dictionary<string, GameObject> spawnedPrefabs = new();
 
     void Awake()
     {
-        // Build explicit mapping
         foreach (var pair in imagePrefabPairs)
         {
-            prefabMap[pair.imageName] = pair.prefab;
+            if (pair.prefab != null && !string.IsNullOrEmpty(pair.imageName))
+            {
+                prefabMap[pair.imageName] = pair.prefab;
+            }
         }
     }
 
@@ -42,57 +45,37 @@ public class ImageTracker : MonoBehaviour
 
     private void OnTrackedImagesChanged(ARTrackablesChangedEventArgs<ARTrackedImage> eventArgs)
     {
-        // --- Added ---
         foreach (var trackedImage in eventArgs.added)
         {
-            if (spawnedPrefabs.ContainsKey(trackedImage))
-                continue; // Already spawned
-
-            string imageName = trackedImage.referenceImage.name;
-
-            if (prefabMap.TryGetValue(imageName, out var prefab))
-            {
-                GameObject spawned = Instantiate(prefab, trackedImage.transform);
-                spawned.transform.localPosition = Vector3.zero;
-                spawned.transform.localRotation = Quaternion.identity;
-
-                spawnedPrefabs[trackedImage] = spawned;
-            }
-            else
-            {
-                Debug.LogWarning($"No prefab mapped for image '{imageName}'");
-            }
+            SpawnOrUpdate(trackedImage);
         }
 
-        // --- Updated ---
         foreach (var trackedImage in eventArgs.updated)
         {
-            if (spawnedPrefabs.TryGetValue(trackedImage, out var spawned))
-            {
-                // Only update transform if actively tracked
-                if (trackedImage.trackingState == TrackingState.Tracking)
-                {
-                    spawned.SetActive(true);
-                    spawned.transform.position = trackedImage.transform.position;
-                    spawned.transform.rotation = trackedImage.transform.rotation;
-                }
-                else
-                {
-                    spawned.SetActive(false);
-                }
-            }
+            SpawnOrUpdate(trackedImage);
         }
+    }
 
-        // --- Removed ---
-        foreach (var kvp in eventArgs.removed)
+    private void SpawnOrUpdate(ARTrackedImage trackedImage)
+    {
+        string imageName = trackedImage.referenceImage.name;
+
+        if (!prefabMap.TryGetValue(imageName, out var prefab))
+            return;
+
+        if (!spawnedPrefabs.ContainsKey(imageName))
         {
-            var trackedImage = kvp.Value;
-            if (trackedImage == null) continue;
-
-            if (spawnedPrefabs.TryGetValue(trackedImage, out var spawned))
+            GameObject spawned = Instantiate(prefab, trackedImage.transform.position, trackedImage.transform.rotation);
+            spawnedPrefabs[imageName] = spawned;
+        }
+        else
+        {
+            var spawned = spawnedPrefabs[imageName];
+            if (trackedImage.trackingState == TrackingState.Tracking)
             {
-                Destroy(spawned);
-                spawnedPrefabs.Remove(trackedImage);
+                spawned.SetActive(true);
+                spawned.transform.position = trackedImage.transform.position;
+                spawned.transform.rotation = trackedImage.transform.rotation;
             }
         }
     }
