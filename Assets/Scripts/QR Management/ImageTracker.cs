@@ -6,32 +6,26 @@ using TMPro;
 
 public class ImageTracker : MonoBehaviour
 {
-    [Header("AR Foundation Components")]
     [SerializeField] private ARTrackedImageManager trackedImages;
 
     [System.Serializable]
     public struct ImagePrefabPair
     {
-        public string imageName;     
-        public GameObject prefab;    
+        public string imageName;
+        public GameObject prefab;
     }
 
     [SerializeField] private ImagePrefabPair[] imagePrefabPairs;
-
-    [Header("UI Debug Output (optional)")]
     [SerializeField] private TMP_Text infoBox;
 
     private readonly Dictionary<string, GameObject> prefabMap = new();
-    private readonly Dictionary<string, GameObject> spawnedPrefabs = new();
+    private readonly Dictionary<ARTrackedImage, GameObject> spawnedPrefabs = new();
 
     void Awake()
     {
         foreach (var pair in imagePrefabPairs)
         {
-            if (pair.imageName != null && pair.prefab != null)
-            {
-                prefabMap[pair.imageName] = pair.prefab;
-            }
+            prefabMap[pair.imageName] = pair.prefab;
         }
     }
 
@@ -47,44 +41,28 @@ public class ImageTracker : MonoBehaviour
 
     private void OnTrackedImagesChanged(ARTrackablesChangedEventArgs<ARTrackedImage> eventArgs)
     {
-        // --- Added ---
         foreach (var trackedImage in eventArgs.added)
         {
             string imageName = trackedImage.referenceImage.name;
 
             if (prefabMap.TryGetValue(imageName, out var prefab))
             {
-                if (!spawnedPrefabs.ContainsKey(imageName))
+                if (!spawnedPrefabs.ContainsKey(trackedImage))
                 {
-                    GameObject spawned = Instantiate(prefab, trackedImage.transform.position, trackedImage.transform.rotation);
-                    spawnedPrefabs[imageName] = spawned;
+                    GameObject spawned = Instantiate(prefab, trackedImage.transform);
+                    spawned.transform.localPosition = Vector3.zero;
+                    spawned.transform.localRotation = Quaternion.identity;
+
+                    spawnedPrefabs[trackedImage] = spawned;
                 }
-            }
-            else
-            {
-                Debug.LogWarning($"No prefab mapped for reference image '{imageName}'");
             }
         }
 
         foreach (var trackedImage in eventArgs.updated)
         {
-            string imageName = trackedImage.referenceImage.name;
-
-            if (spawnedPrefabs.TryGetValue(imageName, out var spawned))
+            if (spawnedPrefabs.TryGetValue(trackedImage, out var spawned))
             {
-                if (trackedImage.trackingState == TrackingState.Tracking)
-                {
-                    spawned.SetActive(true);
-                    spawned.transform.SetPositionAndRotation(trackedImage.transform.position, trackedImage.transform.rotation);
-                }
-                else if (trackedImage.trackingState == TrackingState.Limited)
-                {
-                    spawned.SetActive(true);
-                }
-                else 
-                {
-                    spawned.SetActive(false);
-                }
+                spawned.SetActive(trackedImage.trackingState == TrackingState.Tracking);
             }
         }
 
@@ -93,11 +71,10 @@ public class ImageTracker : MonoBehaviour
             var trackedImage = kvp.Value;
             if (trackedImage == null) continue;
 
-            string imageName = trackedImage.referenceImage.name;
-            if (spawnedPrefabs.TryGetValue(imageName, out var spawned))
+            if (spawnedPrefabs.TryGetValue(trackedImage, out var spawned))
             {
                 Destroy(spawned);
-                spawnedPrefabs.Remove(imageName);
+                spawnedPrefabs.Remove(trackedImage);
             }
         }
     }
