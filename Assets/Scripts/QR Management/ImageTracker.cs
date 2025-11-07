@@ -4,7 +4,7 @@ using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 using TMPro;
 
-public class PersistentImageTracker : MonoBehaviour
+public class ImageTracker : MonoBehaviour
 {
     [SerializeField] private ARTrackedImageManager trackedImages;
 

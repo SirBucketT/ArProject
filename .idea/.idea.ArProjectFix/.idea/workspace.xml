@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c91ad64c-c0af-45de-8499-3f582f5ba8a0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.utmp/RelWithDebInfo/5j1s3f12/arm64-v8a/configure_fingerprint.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.utmp/RelWithDebInfo/5j1s3f12/arm64-v8a/configure_fingerprint.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/QR Management/ImageTracker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/QR Management/ImageTracker.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_ARMarker/Markers/ReferenceImageLibrary.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ARMarker/Markers/ReferenceImageLibrary.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +105,7 @@
       <option name="presentableId" value="Default" />
       <updated>1762433857161</updated>
       <workItem from="1762433858060" duration="3000" />
-      <workItem from="1762506050993" duration="12182000" />
+      <workItem from="1762506050993" duration="12589000" />
     </task>
     <servers />
   </component>
