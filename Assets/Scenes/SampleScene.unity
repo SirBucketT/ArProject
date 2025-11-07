@@ -463,9 +463,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f68ee23d7c43078498687641d48f3fa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arPrefabs:
-  - {fileID: 564666390134525999, guid: 3e175e6ce5385526d8da3655243815ef, type: 3}
-  - {fileID: 5009162044786660859, guid: 2b162393015851a4a80fef6e12f2b098, type: 3}
+  trackedImages: {fileID: 588698013}
+  imagePrefabPairs:
+  - imageName: QuestionPrefab
+    prefab: {fileID: 564666390134525999, guid: 3e175e6ce5385526d8da3655243815ef, type: 3}
+  - imageName: JohnLemon
+    prefab: {fileID: 5009162044786660859, guid: 2b162393015851a4a80fef6e12f2b098, type: 3}
   infoBox: {fileID: 0}
 --- !u!1 &702413256
 GameObject:

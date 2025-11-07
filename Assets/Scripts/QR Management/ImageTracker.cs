@@ -6,19 +6,37 @@ using TMPro;
 
 public class ImageTracker : MonoBehaviour
 {
-    private ARTrackedImageManager trackedImages;
-    public GameObject[] arPrefabs;
-    private Dictionary<ARTrackedImage, GameObject> arObjectMap = new();
-    public TMP_Text infoBox;
+    [Header("AR Foundation Components")]
+    [SerializeField] private ARTrackedImageManager trackedImages;
+
+    [System.Serializable]
+    public struct ImagePrefabPair
+    {
+        public string imageName;     
+        public GameObject prefab;    
+    }
+
+    [SerializeField] private ImagePrefabPair[] imagePrefabPairs;
+
+    [Header("UI Debug Output (optional)")]
+    [SerializeField] private TMP_Text infoBox;
+
+    private readonly Dictionary<string, GameObject> prefabMap = new();
+    private readonly Dictionary<string, GameObject> spawnedPrefabs = new();
 
     void Awake()
     {
-        trackedImages = GetComponent<ARTrackedImageManager>();
+        foreach (var pair in imagePrefabPairs)
+        {
+            if (pair.imageName != null && pair.prefab != null)
+            {
+                prefabMap[pair.imageName] = pair.prefab;
+            }
+        }
     }
 
     void OnEnable()
     {
-        // ✅ Subscribe to event (don’t assign!)
         trackedImages.trackablesChanged.AddListener(OnTrackedImagesChanged);
     }
 
@@ -29,42 +47,67 @@ public class ImageTracker : MonoBehaviour
 
     private void OnTrackedImagesChanged(ARTrackablesChangedEventArgs<ARTrackedImage> eventArgs)
     {
+        // --- Added ---
         foreach (var trackedImage in eventArgs.added)
         {
-            foreach (var prefab in arPrefabs)
+            string imageName = trackedImage.referenceImage.name;
+
+            if (prefabMap.TryGetValue(imageName, out var prefab))
             {
-                if (prefab.name == trackedImage.referenceImage.name)
+                if (!spawnedPrefabs.ContainsKey(imageName))
                 {
-                    GameObject spawned = Instantiate(prefab, trackedImage.transform);
-                    arObjectMap[trackedImage] = spawned;
-                    break;
+                    GameObject spawned = Instantiate(prefab, trackedImage.transform.position, trackedImage.transform.rotation);
+                    spawnedPrefabs[imageName] = spawned;
                 }
+            }
+            else
+            {
+                Debug.LogWarning($"No prefab mapped for reference image '{imageName}'");
             }
         }
 
         foreach (var trackedImage in eventArgs.updated)
         {
-            if (arObjectMap.TryGetValue(trackedImage, out var obj))
+            string imageName = trackedImage.referenceImage.name;
+
+            if (spawnedPrefabs.TryGetValue(imageName, out var spawned))
             {
-                obj.SetActive(trackedImage.trackingState == TrackingState.Tracking);
+                if (trackedImage.trackingState == TrackingState.Tracking)
+                {
+                    spawned.SetActive(true);
+                    spawned.transform.SetPositionAndRotation(trackedImage.transform.position, trackedImage.transform.rotation);
+                }
+                else if (trackedImage.trackingState == TrackingState.Limited)
+                {
+                    spawned.SetActive(true);
+                }
+                else 
+                {
+                    spawned.SetActive(false);
+                }
             }
         }
-        
+
         foreach (var kvp in eventArgs.removed)
         {
             var trackedImage = kvp.Value;
-            if (trackedImage != null && arObjectMap.TryGetValue(trackedImage, out var obj))
+            if (trackedImage == null) continue;
+
+            string imageName = trackedImage.referenceImage.name;
+            if (spawnedPrefabs.TryGetValue(imageName, out var spawned))
             {
-                Destroy(obj);
-                arObjectMap.Remove(trackedImage);
+                Destroy(spawned);
+                spawnedPrefabs.Remove(imageName);
             }
         }
     }
 
     void Update()
     {
+        if (infoBox == null) return;
+
         infoBox.text = "Tracking Data:\n";
-        foreach (var trackedImage in new List<ARTrackedImage>(arObjectMap.Keys))
+        foreach (var trackedImage in trackedImages.trackables)
         {
             infoBox.text += $"{trackedImage.referenceImage.name} - {trackedImage.trackingState}\n";
         }
