@@ -5,7 +5,5 @@ public class ScoreManager : ScriptableObject
 {
     public static ScoreManager instance;
 
-    [SerializeField] internal float CurrentScore;
-
-    [SerializeField] internal float playerLives;
+    public static float CurrentScore = 0;
 }

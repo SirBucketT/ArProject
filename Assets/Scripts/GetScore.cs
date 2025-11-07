@@ -6,14 +6,13 @@ public class GetScore : MonoBehaviour
 {
     [SerializeField] ScoreManager scoreManager;
 
-    float DisplayScore, CurrentLives;
+    float DisplayScore;
     
     [SerializeField] TMP_Text scoreText;
     
     private void Start()
     {
-        DisplayScore = ScoreManager.instance.CurrentScore;
-        CurrentLives = ScoreManager.instance.playerLives; 
+        DisplayScore = ScoreManager.CurrentScore;
 
         scoreText.text = $"Current Score: {DisplayScore.ToString()}";
     }
@@ -38,25 +37,9 @@ public class GetScore : MonoBehaviour
             }
             DisplayScore++;
             
-        } else if (msg.IsIncorrectReply)
-        {
-            if (SoundManager.Instance != null)
-            {
-                SoundManager.Instance.PlayBadPick();
-            }
-            DisplayScore--;
-            CurrentLives--;
-            ScoreManager.instance.playerLives = CurrentLives;
-            OnLivesZero();
         }
         
+        ScoreManager.CurrentScore = DisplayScore;
         scoreText.text = $"Current Score: {DisplayScore.ToString()}";
-
-        ScoreManager.instance.CurrentScore = DisplayScore;
-    }
-
-    void OnLivesZero()
-    {
-        
     }
 }
