@@ -19,30 +19,20 @@ public class QRCodeContentController : MonoBehaviour
         public string qrCodeName; 
         public GameObject contentPrefab; 
     }
-
     void OnEnable()
     {
-        // FIX: Use AddListener for the UnityEvent type.
-        m_TrackedImageManager.trackablesChanged.AddListener(OnTrackedImagesChanged);
+        m_TrackedImageManager.trackedImagesChanged += OnTrackedImagesChanged;
     }
 
     void OnDisable()
     {
-        // FIX: Use RemoveListener for the UnityEvent type.
-        m_TrackedImageManager.trackablesChanged.RemoveListener(OnTrackedImagesChanged);
+        m_TrackedImageManager.trackedImagesChanged -= OnTrackedImagesChanged;
     }
-
-    void OnTrackedImagesChanged(ARTrackablesChangedEventArgs<ARTrackedImage> eventArgs)
+    void OnTrackedImagesChanged(ARTrackedImagesChangedEventArgs eventArgs)
     {
-        // --- ADDED Images ---
-        foreach (var entry in eventArgs.added)
+        foreach (var trackedImage in eventArgs.added)
         {
-            // 🚨 FINAL FIX: Explicitly cast the entry to the required type. 
-            // We are using 'var' for the entry, but casting it to ARTrackedImage.
-            ARTrackedImage trackedImage = (ARTrackedImage)entry;
-
-            // Now, use the ARTrackedImage.name property.
-            string imageName = trackedImage.name; 
+            string imageName = trackedImage.referenceImage.name;
             
             GameObject prefabToSpawn = GetPrefabForName(imageName);
             
@@ -53,23 +43,17 @@ public class QRCodeContentController : MonoBehaviour
             }
         }
         
-        // --- UPDATED Images ---
-        foreach (var entry in eventArgs.updated)
+        foreach (var trackedImage in eventArgs.updated)
         {
-            ARTrackedImage trackedImage = (ARTrackedImage)entry;
-            
-            if (m_InstantiatedContent.TryGetValue(trackedImage.name, out GameObject content))
+            if (m_InstantiatedContent.TryGetValue(trackedImage.referenceImage.name, out GameObject content))
             {
                 content.SetActive(trackedImage.trackingState == TrackingState.Tracking);
             }
         }
-
-        // --- REMOVED Images ---
-        foreach (var entry in eventArgs.removed)
+        
+        foreach (var trackedImage in eventArgs.removed)
         {
-            ARTrackedImage trackedImage = (ARTrackedImage)entry;
-            
-            string imageName = trackedImage.name;
+            string imageName = trackedImage.referenceImage.name;
 
             if (m_InstantiatedContent.TryGetValue(imageName, out GameObject contentToRemove))
             {
