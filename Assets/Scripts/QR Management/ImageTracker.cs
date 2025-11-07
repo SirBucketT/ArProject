@@ -6,7 +6,7 @@ using TMPro;
 
 public class ImageTracker : MonoBehaviour
 {
-    [SerializeField] private ARTrackedImageManager trackedImages;
+    [SerializeField] ARTrackedImageManager trackedImages;
 
     [System.Serializable]
     public struct ImagePrefabPair
@@ -15,8 +15,8 @@ public class ImageTracker : MonoBehaviour
         public GameObject prefab;
     }
 
-    [SerializeField] private ImagePrefabPair[] imagePrefabPairs;
-    [SerializeField] private TMP_Text infoBox;
+    [SerializeField] ImagePrefabPair[] imagePrefabPairs;
+    [SerializeField] TMP_Text infoBox;
 
     private readonly Dictionary<string, GameObject> prefabMap = new();
 
