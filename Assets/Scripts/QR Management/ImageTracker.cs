@@ -11,8 +11,8 @@ public class ImageTracker : MonoBehaviour
     [System.Serializable]
     public struct ImagePrefabPair
     {
-        public string imageName;
-        public GameObject prefab;
+        public string imageName; // Must match Reference Image Library name
+        public GameObject prefab; 
     }
 
     [SerializeField] private ImagePrefabPair[] imagePrefabPairs;
@@ -23,6 +23,7 @@ public class ImageTracker : MonoBehaviour
 
     void Awake()
     {
+        // Build explicit mapping
         foreach (var pair in imagePrefabPairs)
         {
             prefabMap[pair.imageName] = pair.prefab;
@@ -41,31 +42,48 @@ public class ImageTracker : MonoBehaviour
 
     private void OnTrackedImagesChanged(ARTrackablesChangedEventArgs<ARTrackedImage> eventArgs)
     {
+        // --- Added ---
         foreach (var trackedImage in eventArgs.added)
         {
+            if (spawnedPrefabs.ContainsKey(trackedImage))
+                continue; // Already spawned
+
             string imageName = trackedImage.referenceImage.name;
 
             if (prefabMap.TryGetValue(imageName, out var prefab))
             {
-                if (!spawnedPrefabs.ContainsKey(trackedImage))
-                {
-                    GameObject spawned = Instantiate(prefab, trackedImage.transform);
-                    spawned.transform.localPosition = Vector3.zero;
-                    spawned.transform.localRotation = Quaternion.identity;
+                GameObject spawned = Instantiate(prefab, trackedImage.transform);
+                spawned.transform.localPosition = Vector3.zero;
+                spawned.transform.localRotation = Quaternion.identity;
 
-                    spawnedPrefabs[trackedImage] = spawned;
-                }
+                spawnedPrefabs[trackedImage] = spawned;
+            }
+            else
+            {
+                Debug.LogWarning($"No prefab mapped for image '{imageName}'");
             }
         }
 
+        // --- Updated ---
         foreach (var trackedImage in eventArgs.updated)
         {
             if (spawnedPrefabs.TryGetValue(trackedImage, out var spawned))
             {
-                spawned.SetActive(trackedImage.trackingState == TrackingState.Tracking);
+                // Only update transform if actively tracked
+                if (trackedImage.trackingState == TrackingState.Tracking)
+                {
+                    spawned.SetActive(true);
+                    spawned.transform.position = trackedImage.transform.position;
+                    spawned.transform.rotation = trackedImage.transform.rotation;
+                }
+                else
+                {
+                    spawned.SetActive(false);
+                }
             }
         }
 
+        // --- Removed ---
         foreach (var kvp in eventArgs.removed)
         {
             var trackedImage = kvp.Value;

@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c91ad64c-c0af-45de-8499-3f582f5ba8a0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ArProjectFix/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ArProjectFix/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/QR Management/ImageTracker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/QR Management/ImageTracker.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -103,7 +102,7 @@
       <option name="presentableId" value="Default" />
       <updated>1762433857161</updated>
       <workItem from="1762433858060" duration="3000" />
-      <workItem from="1762506050993" duration="10802000" />
+      <workItem from="1762506050993" duration="11208000" />
     </task>
     <servers />
   </component>
