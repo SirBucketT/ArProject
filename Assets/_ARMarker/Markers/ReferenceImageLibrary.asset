@@ -21,8 +21,8 @@ MonoBehaviour:
       m_GuidLow: 4635741332808656079
       m_GuidHigh: 13984011863404536204
     m_SerializedTextureGuid:
-      m_GuidLow: 4711916501246862753
-      m_GuidHigh: 13704363768533677336
+      m_GuidLow: 1919346363115312833
+      m_GuidHigh: 5345787225209916314
     m_Size: {x: 1, y: 1}
     m_SpecifySize: 1
     m_Name: QuestionPrefab
@@ -31,8 +31,8 @@ MonoBehaviour:
       m_GuidLow: 5270459166959757580
       m_GuidHigh: 3288608949837607099
     m_SerializedTextureGuid:
-      m_GuidLow: 10224398458045277266
-      m_GuidHigh: 8698885567574740969
+      m_GuidLow: 15211409128980812279
+      m_GuidHigh: 9981033253704454520
     m_Size: {x: 1, y: 1}
     m_SpecifySize: 1
     m_Name: JohnLemon
