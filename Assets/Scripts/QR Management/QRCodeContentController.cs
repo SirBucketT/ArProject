@@ -30,35 +30,32 @@ public class QRCodeContentController : MonoBehaviour
     }
     void OnTrackedImagesChanged(ARTrackedImagesChangedEventArgs eventArgs)
     {
-        foreach (var trackedImage in eventArgs.added)
-        {
-            string imageName = trackedImage.referenceImage.name;
-            
-            GameObject prefabToSpawn = GetPrefabForName(imageName);
-            
-            if (prefabToSpawn != null && !m_InstantiatedContent.ContainsKey(imageName))
-            {
-                GameObject newARContent = Instantiate(prefabToSpawn, trackedImage.transform);
-                m_InstantiatedContent.Add(imageName, newARContent);
-            }
-        }
-        
         foreach (var trackedImage in eventArgs.updated)
         {
-            if (m_InstantiatedContent.TryGetValue(trackedImage.referenceImage.name, out GameObject content))
+            string imageName = trackedImage.referenceImage.name; 
+
+            if (string.IsNullOrEmpty(imageName))
+            {
+                continue; 
+            }
+            
+            if (m_InstantiatedContent.TryGetValue(imageName, out GameObject content)) 
             {
                 content.SetActive(trackedImage.trackingState == TrackingState.Tracking);
             }
         }
-        
+
         foreach (var trackedImage in eventArgs.removed)
         {
-            string imageName = trackedImage.referenceImage.name;
+            string imageName = trackedImage.referenceImage.name; 
+
+            if (string.IsNullOrEmpty(imageName))
+            {
+                continue; 
+            }
 
             if (m_InstantiatedContent.TryGetValue(imageName, out GameObject contentToRemove))
             {
-                Destroy(contentToRemove);
-                m_InstantiatedContent.Remove(imageName);
             }
         }
     }
