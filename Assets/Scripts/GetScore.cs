@@ -6,13 +6,14 @@ public class GetScore : MonoBehaviour
 {
     [SerializeField] ScoreManager scoreManager;
 
-    private float DisplayScore;
+    float DisplayScore, CurrentLives;
     
     [SerializeField] TMP_Text scoreText;
     
     private void Start()
     {
-        DisplayScore = ScoreManager.CurrentScore;
+        DisplayScore = ScoreManager.instance.CurrentScore;
+        CurrentLives = ScoreManager.instance.playerLives; 
 
         scoreText.text = $"Current Score: {DisplayScore.ToString()}";
     }
@@ -44,13 +45,18 @@ public class GetScore : MonoBehaviour
                 SoundManager.Instance.PlayBadPick();
             }
             DisplayScore--;
-            
-            //TODO: will implement a system with lives or gameover condition later.
-            
+            CurrentLives--;
+            ScoreManager.instance.playerLives = CurrentLives;
+            OnLivesZero();
         }
         
         scoreText.text = $"Current Score: {DisplayScore.ToString()}";
+
+        ScoreManager.instance.CurrentScore = DisplayScore;
+    }
+
+    void OnLivesZero()
+    {
         
-        DisplayScore = ScoreManager.CurrentScore;
     }
 }
