@@ -84,10 +84,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4156453486729313236}
-  - component: {fileID: 8048647407495782702}
-  - component: {fileID: 2921537014143322433}
+  - component: {fileID: 403035133663832837}
+  - component: {fileID: 7704595052069236195}
   m_Layer: 0
-  m_Name: QuestionPrefab
+  m_Name: QuestionPrefabQ2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,7 +109,7 @@ Transform:
   - {fileID: 7023292523490470495}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8048647407495782702
+--- !u!114 &403035133663832837
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,20 +118,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 564666390134525999}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ba6a679268565cac9d3bfff21ce560a, type: 3}
+  m_Script: {fileID: 11500000, guid: cd6f8a3d9b21e6a6e9b6e616f6fbe1c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  question: If you drop a blue stone into the Red Sea, what will it become?
-  answerA: A) A red stone
-  answerB: B) A wet stone
-  answerC: C) A blue fish
-  answerD: D) A coral reef
+  question: What is your current location in GPS cordinates
+  answerA: '40.712776, -74.005974 '
+  answerB: '-33.868820, 151.209290 '
+  answerC: '-33.924870, 18.424055 '
   answerTextA: {fileID: 854818793818661080}
   answerTextB: {fileID: 8811282236833762040}
   answerTextC: {fileID: 4355559365017333960}
   answerTextD: {fileID: 9057913027424765154}
-  Question: {fileID: 7447109924565320688}
---- !u!114 &2921537014143322433
+  questionText: {fileID: 7447109924565320688}
+--- !u!114 &7704595052069236195
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,13 +139,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 564666390134525999}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a0d24431a3f04a1a80f4c45bb8ad202, type: 3}
+  m_Script: {fileID: 11500000, guid: 2c95017c3f6b4a783b959b0773db0840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isACorrect: 0
-  isBCorrect: 1
+  isBCorrect: 0
   isCCorrect: 0
-  isDCorrect: 0
+  isDCorrect: 1
   waitingTime: 0.3
 --- !u!1 &1739500216560966735
 GameObject:
@@ -804,8 +803,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2921537014143322433}
-        m_TargetAssemblyTypeName: AnswerManager, Assembly-CSharp
+      - m_Target: {fileID: 7704595052069236195}
+        m_TargetAssemblyTypeName: ExternalAPIAnswerManager, Assembly-CSharp
         m_MethodName: OnClickA
         m_Mode: 1
         m_Arguments:
@@ -1073,8 +1072,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2921537014143322433}
-        m_TargetAssemblyTypeName: AnswerManager, Assembly-CSharp
+      - m_Target: {fileID: 7704595052069236195}
+        m_TargetAssemblyTypeName: ExternalAPIAnswerManager, Assembly-CSharp
         m_MethodName: OnClickC
         m_Mode: 1
         m_Arguments:
@@ -1342,8 +1341,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2921537014143322433}
-        m_TargetAssemblyTypeName: AnswerManager, Assembly-CSharp
+      - m_Target: {fileID: 7704595052069236195}
+        m_TargetAssemblyTypeName: ExternalAPIAnswerManager, Assembly-CSharp
         m_MethodName: OnClickD
         m_Mode: 1
         m_Arguments:
@@ -1475,8 +1474,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2921537014143322433}
-        m_TargetAssemblyTypeName: AnswerManager, Assembly-CSharp
+      - m_Target: {fileID: 7704595052069236195}
+        m_TargetAssemblyTypeName: ExternalAPIAnswerManager, Assembly-CSharp
         m_MethodName: OnClickB
         m_Mode: 1
         m_Arguments:

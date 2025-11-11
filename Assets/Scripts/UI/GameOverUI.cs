@@ -46,14 +46,16 @@ public class GameOverUI : MonoBehaviour
 
     void HighscoreCheck()
     {
-        if (PlayerPrefs.GetInt("Highscore") > scoreValue)
-        {
-            PlayerPrefs.SetFloat("Highscore", highscoreValue);
-            PlayerPrefs.Save();
-        }
-
         highscoreValue = PlayerPrefs.GetFloat("Highscore");
-
+        
+        if (highscoreValue > scoreValue)
+        {
+            PlayerPrefs.SetFloat("Highscore", scoreValue);
+            PlayerPrefs.Save();
+            
+            highscoreValue = PlayerPrefs.GetFloat("Highscore");
+        }
+        
         highscoreText.text = $"Your Highscore: {highscoreValue.ToString()}";
     }
 }
