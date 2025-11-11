@@ -40,6 +40,12 @@ public class UpdateLives : MonoBehaviour
             Hp1.GetComponent<Image>().color = livesColor;
             Hp2.GetComponent<Image>().color = livesLostColor; 
             Hp3.GetComponent<Image>().color = livesLostColor;
+        } else if  (msg.currentLives == 0)
+        {
+            new GameOverMessage()
+            {
+                isGameOver = true
+            }.InvokeExtension();
         }
     }
 }

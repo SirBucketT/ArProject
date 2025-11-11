@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c91ad64c-c0af-45de-8499-3f582f5ba8a0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TestLocationService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TestLocationService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ArProjectFix/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ArProjectFix/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UpdateLives.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UpdateLives.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +20,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GetScore.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LivesManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Messages/GameOverMessage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Messages/LivesUpdateMessage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Messages/LivesZeroMessage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/QR Management/ImageTracker.cs" root0="FORCE_HIGHLIGHTING" />
@@ -113,7 +116,7 @@
       <updated>1762433857161</updated>
       <workItem from="1762433858060" duration="3000" />
       <workItem from="1762506050993" duration="20411000" />
-      <workItem from="1762852144361" duration="1742000" />
+      <workItem from="1762852144361" duration="2924000" />
     </task>
     <servers />
   </component>

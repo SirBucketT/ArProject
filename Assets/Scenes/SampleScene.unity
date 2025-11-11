@@ -526,7 +526,7 @@ MonoBehaviour:
   Hp2: {fileID: 2139083793}
   Hp3: {fileID: 2016630814}
   livesColor: {r: 0.26842844, g: 0.91359264, b: 0.49274734, a: 1}
-  livesLostColor: {r: 1, g: 0, b: 0.13477135, a: 0}
+  livesLostColor: {r: 1, g: 0, b: 0.13477135, a: 1}
 --- !u!114 &568815207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -935,6 +935,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f17d015ec833a0418dddb272bca0590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  location: 
   locationText: {fileID: 969984116}
 --- !u!1 &969984114
 GameObject:
