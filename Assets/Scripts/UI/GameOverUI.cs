@@ -4,16 +4,17 @@ using UnityEngine;
 public class GameOverUI : MonoBehaviour
 {
     [SerializeField] GameObject gameOverScreen;
-    [SerializeField] GameObject XRrig;
+    [SerializeField] GameObject XR_rig;
     
-    [SerializeField] TMP_Text scoreText;
+    [SerializeField] TMP_Text scoreText, highscoreText;
+    float scoreValue, highscoreValue;
 
     string GetScoreDisplay;
 
     void Awake()
     {
         gameOverScreen.SetActive(false);
-        XRrig.SetActive(true);
+        XR_rig.SetActive(true);
     }
     
     void OnEnable()
@@ -31,11 +32,28 @@ public class GameOverUI : MonoBehaviour
         if (msg.isGameOver)
         {
             gameOverScreen.SetActive(true);
-            XRrig.SetActive(false);
+            XR_rig.SetActive(false);
 
-            GetScoreDisplay = GetScore.instance.DisplayScore.ToString();
+            scoreValue = GetScore.instance.DisplayScore;
+
+            GetScoreDisplay = scoreValue.ToString();
             
             scoreText.text = $"Your Score {GetScoreDisplay}";
+
+            HighscoreCheck();
         }
+    }
+
+    void HighscoreCheck()
+    {
+        if (PlayerPrefs.GetInt("Highscore") > scoreValue)
+        {
+            PlayerPrefs.SetFloat("Highscore", highscoreValue);
+            PlayerPrefs.Save();
+        }
+
+        highscoreValue = PlayerPrefs.GetFloat("Highscore");
+
+        highscoreText.text = $"Your Highscore: {highscoreValue.ToString()}";
     }
 }
