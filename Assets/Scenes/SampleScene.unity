@@ -747,7 +747,6 @@ MonoBehaviour:
     prefab: {fileID: 564666390134525999, guid: b4b9eddea8c07b93da30afbd90137e5b, type: 3}
   - imageName: QuestionPrefabQ3
     prefab: {fileID: 564666390134525999, guid: 39d03babdb6847f4db92e341b397763e, type: 3}
-  infoBox: {fileID: 0}
 --- !u!1 &702413256
 GameObject:
   m_ObjectHideFlags: 0

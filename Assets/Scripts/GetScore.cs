@@ -26,6 +26,8 @@ public class GetScore : MonoBehaviour
     
     private void Start()
     {
+        ScoreManager.CurrentScore = 0f;
+        
         DisplayScore = ScoreManager.CurrentScore;
 
         scoreText.text = $"Current Score: {DisplayScore.ToString()}";
