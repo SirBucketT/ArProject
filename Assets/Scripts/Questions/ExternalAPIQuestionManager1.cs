@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -25,12 +26,22 @@ public class ExternalAPIQuestionManager1 : MonoBehaviour
 
     void Start()
     {
-        answerD = TestLocationService.instance.location;
+        
+        StartCoroutine(UpdateLocationWhenReady());
         
         questionText.text = question;
         answerTextA.text = answerA;
         answerTextB.text = answerB;
         answerTextC.text = answerC;
+        answerTextD.text = answerD;
+    }
+    
+    IEnumerator UpdateLocationWhenReady()
+    {
+        while (string.IsNullOrEmpty(TestLocationService.instance.location))
+            yield return null;
+
+        answerD = TestLocationService.instance.location;
         answerTextD.text = answerD;
     }
 }

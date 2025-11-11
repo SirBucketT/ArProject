@@ -122,9 +122,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   question: What is your current location in GPS cordinates
-  answerA: '40.712776, -74.005974 '
+  answerA: '40.712776, -74.005974  '
   answerB: '-33.868820, 151.209290 '
-  answerC: '-33.924870, 18.424055 '
+  answerC: '-33.924870, 18.424055  '
   answerTextA: {fileID: 854818793818661080}
   answerTextB: {fileID: 8811282236833762040}
   answerTextC: {fileID: 4355559365017333960}
