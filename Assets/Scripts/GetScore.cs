@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class GetScore : MonoBehaviour
 {
+    public static GetScore instance;
+    
     [SerializeField] ScoreManager scoreManager;
 
-    float DisplayScore;
+    public float DisplayScore;
     
     [SerializeField] TMP_Text scoreText;
     
