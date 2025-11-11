@@ -4,7 +4,9 @@ using TMPro;
 
 public class TestLocationService : MonoBehaviour
 {
-    string location;
+    public static TestLocationService instance;
+    
+    public string location;
     [SerializeField] TMP_Text locationText;
     
     IEnumerator Start()
