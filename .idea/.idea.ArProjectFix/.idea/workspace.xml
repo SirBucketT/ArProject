@@ -7,14 +7,11 @@
     <list default="true" id="c91ad64c-c0af-45de-8499-3f582f5ba8a0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ArProjectFix/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ArProjectFix/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.utmp/RelWithDebInfo/5j1s3f12/arm64-v8a/configure_fingerprint.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.utmp/RelWithDebInfo/5j1s3f12/arm64-v8a/configure_fingerprint.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/PerformanceTestRunInfo.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/PerformanceTestRunSettings.json.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Questions/ExternalAPIQuestionManager1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Questions/ExternalAPIQuestionManager1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ARMarker/Markers/ReferenceImageLibrary.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ARMarker/Markers/ReferenceImageLibrary.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ARMarker/Markers/one.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ARMarker/Markers/one.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ARMarker/Markers/two.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ARMarker/Markers/two.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XR/UserSimulationSettings/Resources/XRSimulationPreferences.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XR/UserSimulationSettings/Resources/XRSimulationPreferences.asset.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +123,7 @@
       <updated>1762433857161</updated>
       <workItem from="1762433858060" duration="3000" />
       <workItem from="1762506050993" duration="20411000" />
-      <workItem from="1762852144361" duration="7693000" />
+      <workItem from="1762852144361" duration="8268000" />
     </task>
     <servers />
   </component>

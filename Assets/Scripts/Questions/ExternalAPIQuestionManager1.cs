@@ -24,22 +24,17 @@ public class ExternalAPIQuestionManager1 : MonoBehaviour
     [SerializeField] TMP_Text answerTextD;
     [SerializeField] TMP_Text questionText;
 
-    void Start()
+    IEnumerator Start()
     {
-        
-        StartCoroutine(UpdateLocationWhenReady());
-        
         questionText.text = question;
         answerTextA.text = answerA;
         answerTextB.text = answerB;
         answerTextC.text = answerC;
-        answerTextD.text = answerD;
-    }
-    
-    IEnumerator UpdateLocationWhenReady()
-    {
-        while (string.IsNullOrEmpty(TestLocationService.instance.location))
+        
+        while (string.IsNullOrEmpty(TestLocationService.instance?.location))
+        {
             yield return null;
+        }
 
         answerD = TestLocationService.instance.location;
         answerTextD.text = answerD;
