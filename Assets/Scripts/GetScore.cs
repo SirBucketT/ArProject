@@ -12,6 +12,18 @@ public class GetScore : MonoBehaviour
     
     [SerializeField] TMP_Text scoreText;
     
+    void Awake()
+        {
+            if (instance == null)
+            {
+                instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
+    
     private void Start()
     {
         DisplayScore = ScoreManager.CurrentScore;

@@ -5,7 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c91ad64c-c0af-45de-8499-3f582f5ba8a0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ArProjectFix/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ArProjectFix/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.utmp/RelWithDebInfo/5j1s3f12/arm64-v8a/configure_fingerprint.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.utmp/RelWithDebInfo/5j1s3f12/arm64-v8a/configure_fingerprint.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/QuestionPrefabQ3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/QuestionPrefabQ3.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/3.2.1/AR Starter Assets/Prefabs/XR Origin (AR Rig).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/3.2.1/AR Starter Assets/Prefabs/XR Origin (AR Rig).prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GetScore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GetScore.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/QR Management/ImageTracker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/QR Management/ImageTracker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/GameOverUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/GameOverUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/GameRestarter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/GameRestarter.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +127,7 @@
       <workItem from="1762433858060" duration="3000" />
       <workItem from="1762506050993" duration="20411000" />
       <workItem from="1762852144361" duration="9796000" />
-      <workItem from="1762871373965" duration="1383000" />
+      <workItem from="1762871373965" duration="4245000" />
     </task>
     <servers />
   </component>

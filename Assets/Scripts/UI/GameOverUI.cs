@@ -4,17 +4,13 @@ using UnityEngine;
 public class GameOverUI : MonoBehaviour
 {
     [SerializeField] GameObject gameOverScreen;
-    [SerializeField] GameObject XR_rig;
     
     [SerializeField] TMP_Text scoreText, highscoreText;
     float scoreValue, highscoreValue;
 
-    string GetScoreDisplay;
-
     void Awake()
     {
         gameOverScreen.SetActive(false);
-        XR_rig.SetActive(true);
     }
     
     void OnEnable()
@@ -32,13 +28,17 @@ public class GameOverUI : MonoBehaviour
         if (msg.isGameOver)
         {
             gameOverScreen.SetActive(true);
-            XR_rig.SetActive(false);
 
-            scoreValue = GetScore.instance.DisplayScore;
-
-            GetScoreDisplay = scoreValue.ToString();
+            if (GetScore.instance != null)
+            {
+                scoreValue = GetScore.instance.DisplayScore;
+            }
+            else
+            {
+                scoreValue = 0f; 
+            }
             
-            scoreText.text = $"Your Score {GetScoreDisplay}";
+            scoreText.text = $"Your Score {scoreValue:0}";
 
             HighscoreCheck();
         }
@@ -46,16 +46,16 @@ public class GameOverUI : MonoBehaviour
 
     void HighscoreCheck()
     {
-        highscoreValue = PlayerPrefs.GetFloat("Highscore");
+        highscoreValue = PlayerPrefs.GetFloat("Highscore", 0f); 
         
-        if (highscoreValue > scoreValue)
+        if (scoreValue > highscoreValue)
         {
             PlayerPrefs.SetFloat("Highscore", scoreValue);
             PlayerPrefs.Save();
             
-            highscoreValue = PlayerPrefs.GetFloat("Highscore");
+            highscoreValue = scoreValue; 
         }
         
-        highscoreText.text = $"Your Highscore: {highscoreValue.ToString()}";
+        highscoreText.text = $"Your Highscore: {highscoreValue:0}";
     }
 }

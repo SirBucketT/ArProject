@@ -5,8 +5,6 @@ public class GameRestarter : MonoBehaviour
 {
     public void RestartScene()
     {
-        string currentSceneName = SceneManager.GetActiveScene().name;
-        
-        SceneManager.LoadScene(currentSceneName);
+       SceneManager.LoadScene(0);
     }
 }

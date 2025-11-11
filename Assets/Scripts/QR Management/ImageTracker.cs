@@ -16,7 +16,6 @@ public class ImageTracker : MonoBehaviour
     }
 
     [SerializeField] ImagePrefabPair[] imagePrefabPairs;
-    [SerializeField] TMP_Text infoBox;
 
     private readonly Dictionary<string, GameObject> prefabMap = new();
 
@@ -77,17 +76,6 @@ public class ImageTracker : MonoBehaviour
                 spawned.transform.position = trackedImage.transform.position;
                 spawned.transform.rotation = trackedImage.transform.rotation;
             }
-        }
-    }
-
-    void Update()
-    {
-        if (infoBox == null) return;
-
-        infoBox.text = "Tracking Data:\n";
-        foreach (var trackedImage in trackedImages.trackables)
-        {
-            infoBox.text += $"{trackedImage.referenceImage.name} - {trackedImage.trackingState}\n";
         }
     }
 }
