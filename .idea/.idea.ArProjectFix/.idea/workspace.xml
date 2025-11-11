@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="c91ad64c-c0af-45de-8499-3f582f5ba8a0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ArProjectFix/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ArProjectFix/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Markers/ReferenceImageLibrary.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Markers/ReferenceImageLibrary.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/SideBarUi.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/SideBarUi.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/Build Profiles/New Android™ Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/Build Profiles/New Android™ Profile.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +25,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Messages/GameOverMessage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Messages/LivesUpdateMessage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Messages/LivesZeroMessage.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Messages/QuestionCheatSheet.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/QR Management/ImageTracker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Questions/ExternalAPIAnswerManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Questions/ExternalAPIQuestionManager1.cs" root0="FORCE_HIGHLIGHTING" />
@@ -121,7 +125,7 @@
       <workItem from="1762433858060" duration="3000" />
       <workItem from="1762506050993" duration="20411000" />
       <workItem from="1762852144361" duration="9796000" />
-      <workItem from="1762871373965" duration="8993000" />
+      <workItem from="1762871373965" duration="9553000" />
     </task>
     <servers />
   </component>
