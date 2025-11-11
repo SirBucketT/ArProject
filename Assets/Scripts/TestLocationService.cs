@@ -39,6 +39,8 @@ public class TestLocationService : MonoBehaviour
         if (Input.location.status == LocationServiceStatus.Failed)
         {
             Debug.LogError("Unable to determine device location");
+
+            location = "Enable location service!";
             yield break;
         }
         else
@@ -47,9 +49,9 @@ public class TestLocationService : MonoBehaviour
             Debug.Log("Location: " + Input.location.lastData.latitude + " " + Input.location.lastData.longitude + " " + Input.location.lastData.altitude + " " + Input.location.lastData.horizontalAccuracy + " " + Input.location.lastData.timestamp);
 
             location =
-                $" {Input.location.lastData.latitude} + {Input.location.lastData.longitude}" +
-                $" + {Input.location.lastData.altitude} + {Input.location.lastData.horizontalAccuracy}" +
-                $" + {Input.location.lastData.timestamp}";
+                $" {Input.location.lastData.latitude}.{Input.location.lastData.longitude}." +
+                $"{Input.location.lastData.altitude}.{Input.location.lastData.horizontalAccuracy}." +
+                $"{Input.location.lastData.timestamp}";
 
             locationText.text = location;
         }
