@@ -26,9 +26,11 @@ public class WikiUi : MonoBehaviour
         wikiUi.SetActive(false);
     }
 
-    void HideWikiUi()
+    public void HideWikiUi()
     {
-        //TODO: WIll implement at an later time. 
+        //TODO: WIll have an better implementation at an later time. 
+        
+        wikiUi.SetActive(false);
     }
 
     void OnEnable()
@@ -43,6 +45,9 @@ public class WikiUi : MonoBehaviour
 
     void OnCheatMessageReceived(QuestionCheatSheetMessage msg)
     {
+        
+        //TODO: animations for the cheat sheet message.
+        
         wikiUi.SetActive(true);
 
         if (msg.hasClickedQuestion1)
