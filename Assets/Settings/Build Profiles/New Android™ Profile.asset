@@ -34,8 +34,8 @@ MonoBehaviour:
     - line: '|   targetDevice: 2'
     - line: '|   useOnDemandResources: 0'
     - line: '|   accelerometerFrequency: 60'
-    - line: '|   companyName: DefaultCompany'
-    - line: '|   productName: ARproject'
+    - line: '|   companyName: com.TKode.readysetmarquiz'
+    - line: '|   productName: Ready, Set, MarQUIZ'
     - line: '|   defaultCursor: {instanceID: 0}'
     - line: '|   cursorHotspot: {x: 0, y: 0}'
     - line: '|   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b:
@@ -165,15 +165,7 @@ MonoBehaviour:
     - line: '|   visionOSBundleVersion: 1.0'
     - line: '|   tvOSBundleVersion: 1.0'
     - line: '|   bundleVersion: 1.0.0'
-    - line: '|   preloadedAssets:'
-    - line: '|   - {fileID: 7409956309476867576, guid: 3fd4fc0127790db4bae83f7b77da8d45,
-        type: 2}'
-    - line: '|   - {fileID: 11400000, guid: c199e683398494f32b4cde18e73ab731, type:
-        2}'
-    - line: '|   - {fileID: 4800000, guid: c9f956787b1d945e7b36e0516201fc76, type:
-        3}'
-    - line: '|   - {fileID: 4800000, guid: 0945859e5a1034c2cb6dce53cb4fb899, type:
-        3}'
+    - line: '|   preloadedAssets: []'
     - line: '|   metroInputSource: 0'
     - line: '|   wsaTransparentSwapchain: 0'
     - line: '|   m_HolographicPauseOnTrackingLoss: 1'
@@ -195,7 +187,7 @@ MonoBehaviour:
     - line: '|   androidMaxAspectRatio: 2.4'
     - line: '|   androidMinAspectRatio: 1'
     - line: '|   applicationIdentifier:'
-    - line: '|     Android: com.unity.template.ar_mobile'
+    - line: '|     Android: com.TKode.readysetmarquiz'
     - line: '|     Standalone: com.unity.template.ar-mobile'
     - line: '|     iPhone: com.unity.template.armobile'
     - line: '|   buildNumber:'
@@ -299,8 +291,8 @@ MonoBehaviour:
     - line: '|   AndroidTargetArchitectures: 2'
     - line: '|   AndroidSplashScreenScale: 0'
     - line: '|   androidSplashScreen: {instanceID: 0}'
-    - line: '|   AndroidKeystoreName: '
-    - line: '|   AndroidKeyaliasName: '
+    - line: '|   AndroidKeystoreName: ''{dedicated}: keystores/qrgame.keystore'''
+    - line: '|   AndroidKeyaliasName: qrgames'
     - line: '|   AndroidEnableArmv9SecurityFeatures: 0'
     - line: '|   AndroidEnableArm64MTE: 0'
     - line: '|   AndroidBuildApkPerCpuArchitecture: 0'
@@ -312,7 +304,7 @@ MonoBehaviour:
     - line: '|   AndroidEnableTango: 0'
     - line: '|   androidEnableBanner: 1'
     - line: '|   androidUseLowAccuracyLocation: 0'
-    - line: '|   androidUseCustomKeystore: 0'
+    - line: '|   androidUseCustomKeystore: 1'
     - line: '|   m_AndroidBanners:'
     - line: '|   - width: 320'
     - line: '|     height: 180'
@@ -995,6 +987,6 @@ MonoBehaviour:
         m_DebugSymbolFormat: 5
         m_CurrentDeploymentTargetId: __builtin__target_default
         m_BuildType: 2
-        m_BuildAppBundle: 0
+        m_BuildAppBundle: 1
         m_IPAddressToConnect: 
         m_SymlinkSources: 0

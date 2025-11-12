@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c91ad64c-c0af-45de-8499-3f582f5ba8a0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Markers/ReferenceImageLibrary.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Markers/ReferenceImageLibrary.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/SideBarUi.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/SideBarUi.cs" afterDir="false" />
-    </list>
+    <list default="true" id="c91ad64c-c0af-45de-8499-3f582f5ba8a0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -124,7 +120,7 @@
       <workItem from="1762506050993" duration="20411000" />
       <workItem from="1762852144361" duration="9796000" />
       <workItem from="1762871373965" duration="9601000" />
-      <workItem from="1762947409252" duration="1142000" />
+      <workItem from="1762947409252" duration="1591000" />
     </task>
     <servers />
   </component>
