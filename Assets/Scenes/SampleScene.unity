@@ -1822,10 +1822,9 @@ MonoBehaviour:
   question3: 'Hint: The Eiffel Tower, completed in 1889, was originally intended
     to be a temporary entrance arch for the 1889 World''s Fair in Paris. It''s the
     most-visited paid monument in the world.'
-  question4: 'Hint: Since the early 2000s, one massive nation in East Asia has undertaken
-    several ambitious projects to build entire, new towns modeled after famous European
-    cities and landmarks. This type of architectural movement, sometimes called ''Duplitecture,''
-    has resulted in cloned villages based on places like Paris, Venice, and etc'
+  question4: "Hint: One massive nation in East Asia is known for 'Duplitecture'\u2014the
+    practice of building entire towns that clone famous European cities and landmarks,
+    such as Paris or Venice."
   question5: "Hint: The word 'Shelterbelt' in the name describes its function\u2014creating
     a protective barrier against the sand and desert winds."
   question6: TODO
