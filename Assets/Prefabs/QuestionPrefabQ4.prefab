@@ -122,13 +122,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   question: Where is the image from?
-  answerA: A) The tower is repainted every seven years using about 60 tons of paint.
-  answerB: B) In the winter, the cold weather causes the iron structure to shrink
-    by about 15 cm.
-  answerC: C) The tower has a secret, tiny apartment built for Gustave Eiffel near
-    the top where he would host distinguished guests.
-  answerD: D) The original contract specified that after 20 years, the tower would
-    be disassembled and sold for scrap metal.
+  answerA: A) Paris - France
+  answerB: B) Hallstatt Guangdong - China
+  answerC: C) Lucerne - switzerland
+  answerD: D) Hamburg - Germany
   answerTextA: {fileID: 854818793818661080}
   answerTextB: {fileID: 8811282236833762040}
   answerTextC: {fileID: 4355559365017333960}
@@ -147,8 +144,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isACorrect: 0
-  isBCorrect: 0
-  isCCorrect: 1
+  isBCorrect: 1
+  isCCorrect: 0
   isDCorrect: 0
   waitingTime: 0.3
 --- !u!1 &1739500216560966735
