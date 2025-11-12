@@ -6,12 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c91ad64c-c0af-45de-8499-3f582f5ba8a0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ArProjectFix/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ArProjectFix/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.utmp/RelWithDebInfo/5j1s3f12/arm64-v8a/.cmake/api/v1/reply/index-2025-11-12T12-43-40-0700.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.utmp/RelWithDebInfo/5j1s3f12/arm64-v8a/.cmake/api/v1/reply/index-2025-11-12T15-16-35-0319.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.utmp/RelWithDebInfo/5j1s3f12/arm64-v8a/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/.utmp/RelWithDebInfo/5j1s3f12/arm64-v8a/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.utmp/RelWithDebInfo/5j1s3f12/arm64-v8a/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/.utmp/RelWithDebInfo/5j1s3f12/arm64-v8a/.ninja_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.utmp/RelWithDebInfo/5j1s3f12/arm64-v8a/configure_fingerprint.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.utmp/RelWithDebInfo/5j1s3f12/arm64-v8a/configure_fingerprint.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Markers/ReferenceImageLibrary.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Markers/ReferenceImageLibrary.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GetScore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GetScore.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Settings/Build Profiles/New Android™ Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/Build Profiles/New Android™ Profile.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -129,7 +128,7 @@
       <workItem from="1762506050993" duration="20411000" />
       <workItem from="1762852144361" duration="9796000" />
       <workItem from="1762871373965" duration="9601000" />
-      <workItem from="1762947409252" duration="3113000" />
+      <workItem from="1762947409252" duration="4183000" />
     </task>
     <servers />
   </component>
