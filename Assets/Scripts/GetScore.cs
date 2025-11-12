@@ -45,6 +45,8 @@ public class GetScore : MonoBehaviour
 
     void UpdateScore(ReplyMessage msg)
     {
+        Handheld.Vibrate();
+        
         if (msg.IsCorrectReply)
         {
             if (SoundManager.Instance != null)
