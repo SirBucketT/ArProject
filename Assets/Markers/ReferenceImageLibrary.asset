@@ -45,7 +45,17 @@ MonoBehaviour:
     m_SerializedTextureGuid:
       m_GuidLow: 10371951033197635914
       m_GuidHigh: 8878108080087570731
-    m_Size: {x: 0, y: 0}
-    m_SpecifySize: 0
+    m_Size: {x: 1, y: 1}
+    m_SpecifySize: 1
     m_Name: QuestionPrefabQ3
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 4614496260578698996
+      m_GuidHigh: 777509417425338047
+    m_SerializedTextureGuid:
+      m_GuidLow: 1652297623045191668
+      m_GuidHigh: 3981381256789121337
+    m_Size: {x: 1, y: 1}
+    m_SpecifySize: 1
+    m_Name: QuestionPrefabQ4
     m_Texture: {fileID: 0}
