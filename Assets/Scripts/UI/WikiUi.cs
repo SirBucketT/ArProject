@@ -20,6 +20,10 @@ public class WikiUi : MonoBehaviour
     [SerializeField] string question8;
     [SerializeField] string question9;
     [SerializeField] string question10;
+    
+    Animator WikiAnimator;
+    
+    private readonly int IsHiddenAnim = Animator.StringToHash("IsHidden");
 
     void Awake()
     {
@@ -28,7 +32,7 @@ public class WikiUi : MonoBehaviour
 
     public void HideWikiUi()
     {
-        //TODO: WIll have an better implementation at an later time. 
+        WikiAnimator.SetBool(IsHiddenAnim, false); 
         
         wikiUi.SetActive(false);
     }
@@ -46,7 +50,7 @@ public class WikiUi : MonoBehaviour
     void OnCheatMessageReceived(QuestionCheatSheetMessage msg)
     {
         
-        //TODO: animations for the cheat sheet message.
+        WikiAnimator.SetBool(IsHiddenAnim, true);
         
         wikiUi.SetActive(true);
 

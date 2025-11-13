@@ -15,6 +15,7 @@ public class SideBarUi : MonoBehaviour
         sideBar.SetActive(false);
     }
     
+    
     public void ShowSideBar()
     {
         sideBar.SetActive(true);
