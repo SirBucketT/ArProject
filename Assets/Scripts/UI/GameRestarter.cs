@@ -5,6 +5,11 @@ public class GameRestarter : MonoBehaviour
 {
     public void RestartScene()
     {
-       SceneManager.LoadScene(0);
+       SceneManager.LoadScene(1);
+    }
+
+    public void ReturnToMainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }
