@@ -21,20 +21,20 @@ public class WikiUi : MonoBehaviour
     [SerializeField] string question9;
     [SerializeField] string question10;
     
-    Animator WikiAnimator;
+    Animator _wikiAnimator;
     
-    private readonly int IsHiddenAnim = Animator.StringToHash("IsHidden");
+    private readonly int IsHiddenAnimWiki = Animator.StringToHash("IsHiddenAnim");
 
     void Awake()
     {
+        _wikiAnimator = wikiUi.GetComponent<Animator>();
+        _wikiAnimator.SetBool(IsHiddenAnimWiki, false);
         wikiUi.SetActive(false);
     }
 
     public void HideWikiUi()
     {
-        WikiAnimator.SetBool(IsHiddenAnim, false); 
-        
-        wikiUi.SetActive(false);
+        _wikiAnimator.SetBool(IsHiddenAnimWiki, false);
     }
 
     void OnEnable()
@@ -49,11 +49,12 @@ public class WikiUi : MonoBehaviour
 
     void OnCheatMessageReceived(QuestionCheatSheetMessage msg)
     {
+        if (!wikiUi.activeSelf)
+        {
+            wikiUi.SetActive(true);
+        }
+        _wikiAnimator.SetBool(IsHiddenAnimWiki, true);
         
-        WikiAnimator.SetBool(IsHiddenAnim, true);
-        
-        wikiUi.SetActive(true);
-
         if (msg.hasClickedQuestion1)
         {
             wikiText.text = question1;
