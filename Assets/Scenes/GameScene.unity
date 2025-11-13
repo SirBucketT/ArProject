@@ -941,7 +941,7 @@ GameObject:
   - component: {fileID: 224254634}
   - component: {fileID: 224254633}
   m_Layer: 5
-  m_Name: Restart Game
+  m_Name: Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -986,7 +986,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Restart Game
+  m_text: Main Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3abe88dfde1a49ab6b64a744e983a85a, type: 2}
   m_sharedMaterial: {fileID: 5214807108758238957, guid: 3abe88dfde1a49ab6b64a744e983a85a, type: 2}
