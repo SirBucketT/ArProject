@@ -1963,10 +1963,10 @@ MonoBehaviour:
     such as Paris or Venice."
   question5: "Hint: The word 'Shelterbelt' in the name describes its function\u2014creating
     a protective barrier against the sand and desert winds."
-  question6: TODO
-  question7: TODO
-  question8: TODO
-  question9: TODO
+  question6: 'Hint: You need to play some classics if you don''t get this one.'
+  question7: 'Hint: When someone has a change of heart'
+  question8: 'Hint: Not Mario'
+  question9: 'Hint: Not Aperture Science'
   question10: TODO
 --- !u!1 &588698003 stripped
 GameObject:

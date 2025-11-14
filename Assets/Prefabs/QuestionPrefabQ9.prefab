@@ -121,8 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ba6a679268565cac9d3bfff21ce560a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  question: What traditional Japanese instrument is central to the gameplay of the
-    rhythm series Taiko no Tatsujin?
+  question: In the Resident Evil survival horror series, what is the name of the
+    pharmaceutical company responsible for creating the T-virus and G-virus?
   answerA: A) The Megacorp
   answerB: B) Shinra Electric Power Company
   answerC: C) Shamisen Umbrella Corporation
