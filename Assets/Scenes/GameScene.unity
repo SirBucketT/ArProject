@@ -2021,6 +2021,8 @@ MonoBehaviour:
     prefab: {fileID: 564666390134525999, guid: 2b3b7588b8cfa60af95eea1d3883d0f3, type: 3}
   - imageName: QuestionPrefabQ8
     prefab: {fileID: 564666390134525999, guid: 3c2284779306dcabdbee71b59854df90, type: 3}
+  - imageName: QuestionPrefabQ9
+    prefab: {fileID: 564666390134525999, guid: e4e605c6cbea18c1b8db8e8c01a92a88, type: 3}
 --- !u!1 &589943805
 GameObject:
   m_ObjectHideFlags: 0
