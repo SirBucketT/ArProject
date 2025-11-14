@@ -25,6 +25,7 @@ public class AnswerManager : MonoBehaviour
             {
                 IsCorrectReply = true,
             }.InvokeExtension();
+            
         }
         else
         {
