@@ -62,7 +62,7 @@ public class TestLocationService : MonoBehaviour
             
             location = $"{lastData.latitude:F6}, {lastData.longitude:F6}";
             
-            locationText.text = location;
+            locationText.text = "Location Service Enabled";
         }
         
         Input.location.Stop();
